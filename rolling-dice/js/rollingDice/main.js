@@ -9,18 +9,18 @@ const rollDice = (min, max) => {
 
     min = Math.ceil(1);
     max = Math.ceil(6);
-    let roll = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log("roll", roll)
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 
+}
 
-    for (let i = 0; i < 10; i++) {
-        let die1 = rollDice(min, max)
-        let die2 = rollDice(min, max)
-    }
-    console.log(`${die1} + ${die2} === ${die1.value} + ${die2.value}`)
-    if (die1.value === die2.value) {
+for (let i = 0; i < 10; i++) {
+    let die1 = rollDice()
+    let die2 = rollDice()
+
+    let message = `${die1} + ${die2} = ${die1 + die2}`
+    if (die1 === die2) {
         message += " DOUBLES!"
     }
     console.log(message)
-
 }
+
